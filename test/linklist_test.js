@@ -61,6 +61,20 @@ describe('Linklist test', function() {
     });
   });
 
+  describe('#traversal return', function() {
+    it('should traversal break when fn return true', function(done) {
+      var i = 0;
+      L.traversal(list, function(item) {
+        i++;
+        if (item.i === 2) {
+          return true;
+        }
+      });
+      i.should.equal(2);
+      done();
+    });
+  });
+
   describe('#traversal&remove', function() {
     it('should remove %2', function(done) {
       L.traversal(list, function(item) {
