@@ -1,0 +1,26 @@
+{
+  "name": "linklist",
+  "version": "0.0.1",
+  "description": "A linklist from node source",
+  "keywords": ["linklist"],
+  "author": "dead_horse<heyiyu.deadhorse@gmail.com> (http://github.com/dead-horse)",
+  "homepage": "https://github.com/dead-horse/js-linklist",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dead-horse/js-linklist.git"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "should": "*",
+    "mocha": "*"
+  },
+  "license": "MIT",
+  "engines": { 
+    "node": "*" 
+  }
+}
