@@ -61,16 +61,33 @@ describe('Linklist test', function() {
     });
   });
 
-  describe('#traversal return', function() {
-    it('should traversal break when fn return true', function(done) {
+  describe('#traversal break', function() {
+    it('should traversal break when fn done', function(done) {
       var i = 0;
-      L.traversal(list, function(item) {
+      L.traversal(list, function(item, done) {
         i++;
-        if (item.i === 2) {
-          return true;
-        }
+        item.i === 2 ? done() : null;
       });
       i.should.equal(2);
+      done();
+    });
+  });
+
+  describe('#reTraversal break', function() {
+    it('should reTraversal break when fn done', function(done) {
+      var i = 0;
+      L.reTraversal(list, function(item, done) {
+        i++;
+        item.i === 2 ? done() : null;
+      });
+      i.should.equal(2);
+      done();
+    });
+  });
+
+  describe('#length', function() {
+    it('should get length', function(done) {
+      L.length(list).should.equal(3);
       done();
     });
   });
@@ -92,8 +109,8 @@ describe('Linklist test', function() {
     it('should remove all items', function(done) {
       L.clear(list);
       L.isEmpty(list).should.be.ok;
+      L.length(list).should.equal(0);
       done();
     });
   });
-
 });
